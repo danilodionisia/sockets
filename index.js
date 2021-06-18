@@ -7,6 +7,10 @@ const port = process.env.PORT || 3080;
 
 const users = [];
 
+server.get('/', (req, res) => {
+
+});
+
 io.on('connection', async (socket) => {
     
     await socket.on('username', (username) => {
