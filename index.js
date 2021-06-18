@@ -7,9 +7,9 @@ const port = process.env.PORT || 3080;
 
 const users = [];
 
-server.get('/', (req, res) => {
-    res.status(200).json([]);
-});
+server.listen(port, () => {
+    console.log(`Socket Server running on port: ${port}`);
+}); 
 
 io.on('connection', async (socket) => {
     
@@ -20,7 +20,3 @@ io.on('connection', async (socket) => {
 
     await socket.emit('users', users);
 });
-
-server.listen(port, () => {
-    console.log(`Socket Server running on port: ${port}`);
-}); 
